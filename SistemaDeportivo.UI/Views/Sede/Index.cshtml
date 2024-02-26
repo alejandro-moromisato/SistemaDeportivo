@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*----------------------Inicio Modals---------------------*@
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success" style="border-radius: 6px;">
+                <h2 class="modal-title"><span class="glyphicon glyphicon-ok-circle"></span> Sede Olimpica</h2>
+            </div>
+
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group row mb-2">
+                        <label for="nombre" class="control-label col-lg-3">Nombre</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="nombre" name="nombre" autocomplete="off" maxlength="30" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <label for="ubicacion" class="control-label col-lg-3">Ubicación</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="ubicacion" name="ubicacion" autocomplete="off" maxlength="30"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="numero" class="control-label col-lg-3">Número Complejo</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="numero" name="numero" type="number" value="0" autocomplete="off" maxlength="5" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="presupuesto" class="control-label col-lg-3">Presupuesto</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="presupuesto" name="presupuesto" autocomplete="off" value="0.00" maxlength="10" />
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalConfirmacion">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border-radius: 6px;">
+                <h2 class="modal-title"><span class="glyphicon glyphicon-ok-circle"></span> Confirmación</h2>
+            </div>
+
+            <div class="modal-body">
+                <p>¿Está seguro de eliminar el registro?</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnConfirmar">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modalConfirmacion" id="btnSalir">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@*----------------------Fin Modal---------------------*@
+
+
+@*----------------------- Inicio ----------------------*@
+
+<h2> <span class="glyphicon glyphicon-list"></span> Listado de Sedes Olimpicas</h2>
+
+<div class="mx-auto p-2">
+    <button type="button" class="btn btn-success" id="btnAgregar"><span class="glyphicon glyphicon-ok-circle"></span> Agregar</button>
+</div>
+
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Sedes Olimpicas
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>Número de Complejos</th>
+                    <th>Presupuesto</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>Número de Complejos</th>
+                    <th>Presupuesto</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody id="bodytable">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Ubicacion</td>
+                        <td>@item.NumeroComplejo</td>
+                        <td>@item.Presupuesto</td>
+                        <td>
+                            <a class="btn btn-info btn-sm" onclick="Editar(@item.IdSedeOlimpica)"><span class="glyphicon glyphicon-list-alt"></span> Editar</a>
+                            <a class="btn btn-danger btn-sm" onclick="Eliminar(@item.IdSedeOlimpica)"><span class="glyphicon glyphicon-list-alt"></span> Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@*----------------------- Fin ----------------------*@
+
+<input type="hidden" id="id_sede" value="0" />
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Scripts/scriptSede.js"></script>

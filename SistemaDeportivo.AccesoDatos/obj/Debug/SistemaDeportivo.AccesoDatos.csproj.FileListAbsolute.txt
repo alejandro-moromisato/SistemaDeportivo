@@ -1,0 +1,9 @@
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\bin\Debug\SistemaDeportivo.AccesoDatos.dll
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\bin\Debug\SistemaDeportivo.AccesoDatos.pdb
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\bin\Debug\SistemaDeportivo.EntidadNegocio.dll
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\bin\Debug\SistemaDeportivo.EntidadNegocio.pdb
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\obj\Debug\SistemaDeportivo.AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\obj\Debug\SistemaDeportivo.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\obj\Debug\SistemaDeportivo.AccesoDatos.csproj.CopyComplete
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\obj\Debug\SistemaDeportivo.AccesoDatos.dll
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.AccesoDatos\obj\Debug\SistemaDeportivo.AccesoDatos.pdb

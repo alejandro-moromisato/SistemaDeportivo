@@ -1,0 +1,6 @@
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.EntidadNegocio\bin\Debug\SistemaDeportivo.EntidadNegocio.dll
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.EntidadNegocio\bin\Debug\SistemaDeportivo.EntidadNegocio.pdb
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.EntidadNegocio\obj\Debug\SistemaDeportivo.EntidadNegocio.csproj.AssemblyReference.cache
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.EntidadNegocio\obj\Debug\SistemaDeportivo.EntidadNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.EntidadNegocio\obj\Debug\SistemaDeportivo.EntidadNegocio.dll
+C:\Users\Samurai\Desktop\EVALUACION\SistemaDeportivo\SistemaDeportivo.EntidadNegocio\obj\Debug\SistemaDeportivo.EntidadNegocio.pdb

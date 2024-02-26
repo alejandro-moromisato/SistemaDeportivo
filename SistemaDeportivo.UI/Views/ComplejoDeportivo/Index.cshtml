@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*----------------------    COMPLEJO DEPORTIVO  ---------------------*@
+
+@*----------------------Inicio Modals---------------------*@
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark" style="border-radius: 6px;">
+                <h2 class="modal-title text-white"><span class="glyphicon glyphicon-ok-circle"></span> Complejo Deportivo</h2>
+            </div>
+
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group row mb-2">
+                        <label for="sede" class="control-label col-lg-3">Sede</label>
+                        <div class="col-lg-9">
+                            @Html.DropDownList("SeleccionOpcion", (List<SelectListItem>)ViewBag.ListaSede, "Seleccione una opción", new { @class = "form-control", @id = "idSede" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row mb-2">
+                        <label for="localizacion" class="control-label col-lg-3">Localización</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="localizacion" name="localizacion" autocomplete="off" maxlength="30" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <label for="jefe" class="control-label col-lg-3">Jefe</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="jefe" name="jefe" autocomplete="off" maxlength="30" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="area" class="control-label col-lg-3">Area Total</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="area" name="area" type="number" value="0" autocomplete="off" maxlength="5" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="presupuesto" class="control-label col-lg-3">Presupuesto</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" id="presupuesto" name="presupuesto" autocomplete="off" value="0.00" maxlength="10" />
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalConfirmacion">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border-radius: 6px;">
+                <h2 class="modal-title"><span class="glyphicon glyphicon-ok-circle"></span> Confirmación</h2>
+            </div>
+
+            <div class="modal-body">
+                <p>¿Está seguro de eliminar el registro?</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnConfirmar">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modalConfirmacion" id="btnSalir">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@*----------------------Fin Modal---------------------*@
+
+
+
+@*----------------------- Inicio ----------------------*@
+
+
+<h2> <span class="glyphicon glyphicon-list"></span> Listado de Complejos Deportivos</h2>
+
+<div class="card mb-3 mt-3">
+    <div class="card-body">
+        Un complejo deportivo es un espacio diseñado para albergar y facilitar la práctica de diversas actividades deportivas y recreativas
+
+    </div>
+</div>
+
+<div class="mx-auto p-2">
+    <button type="button" class="btn btn-success" id="btnAgregar"><span class="glyphicon glyphicon-ok-circle"></span> Agregar</button>
+</div>
+
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Complejo Deportivo
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Nombre Sede</th>
+                    <th>Localizacion</th>
+                    <th>Jefe</th>
+                    <th>Area Total</th>
+                    <th>Presupuesto</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Nombre Sede</th>
+                    <th>Localizacion</th>
+                    <th>Jefe</th>
+                    <th>Area Total</th>
+                    <th>Presupuesto</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody id="bodytable">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NombreSede</td>
+                        <td>@item.Localizacion</td>
+                        <td>@item.JefeOrganizacion</td>
+                        <td>@item.AreaTotal</td>
+                        <td>@item.Presupuesto</td>
+                        <td>
+                            <a class="btn btn-info btn-sm" onclick="Editar(@item.IdComplejoDeportivo)"><span class="glyphicon glyphicon-list-alt"></span> Editar</a>
+                            <a class="btn btn-danger btn-sm" onclick="Eliminar(@item.IdComplejoDeportivo)"><span class="glyphicon glyphicon-list-alt"></span> Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@*----------------------- Fin ----------------------*@
+
+
+
+<input type="hidden" id="id_cd" value="0" />
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Scripts/scriptComplejoDeportivo.js"></script>
